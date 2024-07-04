@@ -30,10 +30,11 @@ jobs:
             -Dsonar.sources=src/main/java
             -Dsonar.tests=src/test/java
             -Dsonar.junit.reportsPath=target/surefire-reports
-      - name: Download SonarQube Badges
-        run: |
-          wget -O quality_gate.svg "${{ secrets.SONAR_HOST_URL }}/api/project_badges/measure?project=${{ secrets.SONAR_PROJECT_KEY }}&metric=alert_status&token=${{ secrets.SONAR_TOKEN }}"
-          wget -O coverage.svg "${{ secrets.SONAR_HOST_URL }}/api/project_badges/measure?project=${{ secrets.SONAR_PROJECT_KEY }}&metric=coverage&token=${{ secrets.SONAR_TOKEN }}"
+      - name: Download Quality Gate Badge
+        run: wget -O quality_gate.svg "${{ secrets.SONAR_HOST_URL }}/api/project_badges/measure?project=${{ secrets.SONAR_PROJECT_KEY }}&metric=alert_status&token=${{ secrets.SONAR_TOKEN }}"
+      - name: Download Coverage Badge
+        run: wget -O coverage.svg "${{ secrets.SONAR_HOST_URL }}/api/project_badges/measure?project=${{ secrets.SONAR_PROJECT_KEY }}&metric=coverage&token=${{ secrets.SONAR_TOKEN }}"
+
 
       - name: Commit and Push Badges
         run: |
