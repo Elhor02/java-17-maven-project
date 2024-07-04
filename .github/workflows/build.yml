@@ -23,6 +23,13 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+        with:
+          args: >
+            -Dsonar.projectKey=Sonar-Maven
+            -Dsonar.java.binaries=target/classes
+            -Dsonar.sources=src/main/java
+            -Dsonar.tests=src/test/java
+            -Dsonar.junit.reportsPath=target/surefire-reports
       - name: Download SonarQube Badges
         run: |
           wget -O quality_gate.svg "${{ secrets.SONAR_HOST_URL }}/api/project_badges/measure?project=${{ secrets.SONAR_PROJECT_KEY }}&metric=alert_status&token=${{ secrets.SONAR_TOKEN }}"
