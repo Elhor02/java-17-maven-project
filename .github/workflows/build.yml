@@ -1,11 +1,10 @@
 name: Build
 
 on:
-  pull_request:
+  push:
     branches:
       - main
-    types:
-      - opened
+    
 jobs:
   build:
     name: Build and analyze
