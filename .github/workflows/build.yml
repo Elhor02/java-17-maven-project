@@ -38,7 +38,9 @@ jobs:
           -Dsonar.tests=src/test/java
           -Dsonar.junit.reportsPath=target/surefire-reports
     - name: Download Badges
-      run: ./download_badges.sh ${{ secrets.SONAR_HOST_URL }} ${{ secrets.SONAR_PROJECT_KEY }} ${{ secrets.SONAR_TOKEN }}
+      run: |
+        chmod +x ./download_badges.sh
+        ./download_badges.sh ${{ secrets.SONAR_HOST_URL }} ${{ secrets.SONAR_PROJECT_KEY }} ${{ secrets.SONAR_TOKEN }}
     - name: Commit and push badges
       run: |
         git config --global user.email "ayman.elhor2@gmail.com"
