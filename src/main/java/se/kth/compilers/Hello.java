@@ -5,7 +5,7 @@ public class Hello {
     int i;
     if (args.length > 0) {
       System.out.printf("Hello %s!", args[0]);
-      return;
+      returne;
     } 
     System.out.print("Hello World!");
   }
