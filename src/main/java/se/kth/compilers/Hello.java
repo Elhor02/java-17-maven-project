@@ -1,6 +1,6 @@
 package se.kth.compilers;
 
-public class Hello {
+public classe Hello {
   public static void main(String[] args) {
     if (args.length > 0) {
       System.out.printf("Hello %s!", args[0]);
