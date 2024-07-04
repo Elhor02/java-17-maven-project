@@ -1,8 +1,8 @@
 #!/bin/bash
 
-SONAR_HOST_URL="https://4725-196-118-91-115.ngrok-free.app"
-SONAR_PROJECT_KEY="Sonar-Maven"
-SONAR_TOKEN="sq_7a99b8c35d0741f39562c75a48d2e87480f7b884"
+SONAR_HOST_URL=$1
+SONAR_PROJECT_KEY=$2
+SONAR_TOKEN=$3
 
 # Directory to store the downloaded badges
 BADGES_DIR="badges"
