@@ -1,1 +1,7 @@
-[![Quality Gate Status](${{ secrets.SONAR_HOST_URL }}/api/project_badges/measure?project=${{ secrets.SONAR_PROJECT_KEY }}&metric=alert_status)](${{ secrets.SONAR_HOST_URL }}/dashboard?id=${{ secrets.SONAR_PROJECT_KEY }})
+[![Quality Gate Status](quality_gate.svg)](${{ secrets.SONAR_HOST_URL }}/dashboard?id=${{ secrets.SONAR_PROJECT_KEY }})
+
+[![Coverage](coverage.svg)](${{ secrets.SONAR_HOST_URL }}/dashboard?id=${{ secrets.SONAR_PROJECT_KEY }})
+
+
+
+
